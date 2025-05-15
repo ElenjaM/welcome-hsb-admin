@@ -1,0 +1,132 @@
+{
+  "common": {
+    "create": "Erstellen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "search": "Suchen",
+    "noData": "Keine Daten vorhanden",
+    "actions": "Aktionen",
+    "confirm": "Bestätigen",
+    "dashboard": "Dashboard",
+    "welcome": "Willkommen zurück"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "department": "Fachbereich",
+    "universityMember": "Hochschulangehörige",
+    "event": "Veranstaltungen",
+    "room": "Räume",
+    "building": "Gebäude",
+    "roomUsage": "Raumnutzung",
+    "settings": "Einstellungen"
+  },
+  "header": {
+    "search": "Suchen...",
+    "notifications": "Benachrichtigungen",
+    "profile": "Profil",
+    "logout": "Abmelden",
+    "settings": "Einstellungen"
+  },
+  "dashboard": {
+    "title": "Dashboard Übersicht",
+    "welcome": "Willkommen zurück",
+    "statsCards": {
+      "departments": "Fachbereiche",
+      "universityMembers": "Hochschulangehörige",
+      "events": "Veranstaltungen",
+      "rooms": "Räume"
+    },
+    "recentEvents": "Neueste Veranstaltungen",
+    "popularRooms": "Beliebte Räume",
+    "userActivity": "Benutzeraktivität"
+  },
+  "department": {
+    "title": "Fachbereiche verwalten",
+    "id": "ID",
+    "name": "Name",
+    "description": "Beschreibung",
+    "createNew": "Neuen Fachbereich erstellen",
+    "edit": "Fachbereich bearbeiten",
+    "delete": "Fachbereich löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie diesen Fachbereich löschen möchten?"
+  },
+  "universityMember": {
+    "title": "Hochschulangehörige verwalten",
+    "id": "ID",
+    "name": "Name",
+    "email": "E-Mail",
+    "department": "Fachbereich",
+    "createNew": "Neuen Hochschulangehörigen erstellen",
+    "edit": "Hochschulangehörigen bearbeiten",
+    "delete": "Hochschulangehörigen löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie diesen Hochschulangehörigen löschen möchten?"
+  },
+  "event": {
+    "title": "Veranstaltungen verwalten",
+    "id": "ID",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "date": "Datum",
+    "startTime": "Startzeit",
+    "endTime": "Endzeit",
+    "room": "Raum",
+    "createNew": "Neue Veranstaltung erstellen",
+    "edit": "Veranstaltung bearbeiten",
+    "delete": "Veranstaltung löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie diese Veranstaltung löschen möchten?"
+  },
+  "room": {
+    "title": "Räume verwalten",
+    "id": "ID",
+    "name": "Name",
+    "floor": "Etage",
+    "type": "Typ",
+    "building": "Gebäude",
+    "createNew": "Neuen Raum erstellen",
+    "edit": "Raum bearbeiten",
+    "delete": "Raum löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie diesen Raum löschen möchten?"
+  },
+  "building": {
+    "title": "Gebäude verwalten",
+    "id": "ID",
+    "name": "Name",
+    "address": "Adresse",
+    "createNew": "Neues Gebäude erstellen",
+    "edit": "Gebäude bearbeiten",
+    "delete": "Gebäude löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie dieses Gebäude löschen möchten?"
+  },
+  "roomUsage": {
+    "title": "Raumnutzung verwalten",
+    "room": "Raum",
+    "member": "Hochschulangehöriger",
+    "createNew": "Neue Raumnutzung erstellen",
+    "edit": "Raumnutzung bearbeiten",
+    "delete": "Raumnutzung löschen",
+    "deleteConfirm": "Sind Sie sicher, dass Sie diese Raumnutzung löschen möchten?"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "theme": "Aussehen",
+    "lightMode": "Heller Modus",
+    "darkMode": "Dunkler Modus",
+    "notifications": "Benachrichtigungen",
+    "enableNotifications": "Benachrichtigungen aktivieren",
+    "emailNotifications": "E-Mail-Benachrichtigungen",
+    "security": "Sicherheit",
+    "twoFactorAuth": "Zwei-Faktor-Authentifizierung",
+    "changePassword": "Passwort ändern",
+    "savedSuccess": "Einstellungen erfolgreich gespeichert",
+    "account": "Konto"
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "minLength": "Dieses Feld muss mindestens {{min}} Zeichen lang sein",
+    "maxLength": "Dieses Feld darf höchstens {{max}} Zeichen lang sein"
+  }
+}

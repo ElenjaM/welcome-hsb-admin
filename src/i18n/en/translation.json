@@ -1,0 +1,132 @@
+{
+  "common": {
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "noData": "No data available",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "dashboard": "Dashboard",
+    "welcome": "Welcome back"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "department": "Department",
+    "universityMember": "University Members",
+    "event": "Events",
+    "room": "Rooms",
+    "building": "Buildings",
+    "roomUsage": "Room Usage",
+    "settings": "Settings"
+  },
+  "header": {
+    "search": "Search...",
+    "notifications": "Notifications",
+    "profile": "Profile",
+    "logout": "Log out",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Dashboard Overview",
+    "welcome": "Welcome back",
+    "statsCards": {
+      "departments": "Departments",
+      "universityMembers": "University Members",
+      "events": "Events",
+      "rooms": "Rooms"
+    },
+    "recentEvents": "Recent Events",
+    "popularRooms": "Popular Rooms",
+    "userActivity": "User Activity"
+  },
+  "department": {
+    "title": "Manage Departments",
+    "id": "ID",
+    "name": "Name",
+    "description": "Description",
+    "createNew": "Create New Department",
+    "edit": "Edit Department",
+    "delete": "Delete Department",
+    "deleteConfirm": "Are you sure you want to delete this department?"
+  },
+  "universityMember": {
+    "title": "Manage University Members",
+    "id": "ID",
+    "name": "Name",
+    "email": "Email",
+    "department": "Department",
+    "createNew": "Create New Member",
+    "edit": "Edit Member",
+    "delete": "Delete Member",
+    "deleteConfirm": "Are you sure you want to delete this member?"
+  },
+  "event": {
+    "title": "Manage Events",
+    "id": "ID",
+    "title": "Title",
+    "description": "Description",
+    "date": "Date",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "room": "Room",
+    "createNew": "Create New Event",
+    "edit": "Edit Event",
+    "delete": "Delete Event",
+    "deleteConfirm": "Are you sure you want to delete this event?"
+  },
+  "room": {
+    "title": "Manage Rooms",
+    "id": "ID",
+    "name": "Name",
+    "floor": "Floor",
+    "type": "Type",
+    "building": "Building",
+    "createNew": "Create New Room",
+    "edit": "Edit Room",
+    "delete": "Delete Room",
+    "deleteConfirm": "Are you sure you want to delete this room?"
+  },
+  "building": {
+    "title": "Manage Buildings",
+    "id": "ID",
+    "name": "Name",
+    "address": "Address",
+    "createNew": "Create New Building",
+    "edit": "Edit Building",
+    "delete": "Delete Building",
+    "deleteConfirm": "Are you sure you want to delete this building?"
+  },
+  "roomUsage": {
+    "title": "Manage Room Usage",
+    "room": "Room",
+    "member": "Member",
+    "createNew": "Create New Room Usage",
+    "edit": "Edit Room Usage",
+    "delete": "Delete Room Usage",
+    "deleteConfirm": "Are you sure you want to delete this room usage?"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "notifications": "Notifications",
+    "enableNotifications": "Enable Notifications",
+    "emailNotifications": "Email Notifications",
+    "security": "Security",
+    "twoFactorAuth": "Two-Factor Authentication",
+    "changePassword": "Change Password",
+    "savedSuccess": "Settings saved successfully",
+    "account": "Account"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "minLength": "This field must be at least {{min}} characters long",
+    "maxLength": "This field must be at most {{max}} characters long"
+  }
+}
