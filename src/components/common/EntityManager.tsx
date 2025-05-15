@@ -1,28 +1,65 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { PencilIcon, TrashIcon, PlusIcon, XIcon } from 'lucide-react';
+import React, {useState} from 'react';
+import {useTranslation} from 'react-i18next';
+import {PencilIcon, TrashIcon, PlusIcon, XIcon} from 'lucide-react';
 
-const EntityManager = ({
-                           entityName,
-                           data,
-                           columns,
-                           formFields,
-                           onAdd,
-                           onEdit,
-                           onDelete
-                       }) => {
-    const { t } = useTranslation();
-    const [isFormOpen, setIsFormOpen] = useState(false);
-    const [editingId, setEditingId] = useState(null);
-    const [formData, setFormData] = useState({});
-    const [filterText, setFilterText] = useState('');
+// Define interfaces for component props and data structures
+interface ColumnDefinition<T> {
+    key: keyof T | string;
+    label: string;
+    render?: (item: T) => React.ReactNode;
+}
 
-    const initForm = (item = null) => {
+interface FormFieldDefinition {
+    name: string;
+    label: string;
+    type: 'text' | 'number' | 'email' | 'password' | 'date' | 'select' | string;
+    options?: Array<{
+        value: string | number;
+        label: string;
+    }>;
+}
+
+// Generic interface to ensure entities have an ID property
+interface EntityWithId {
+    id: string | number;
+
+    [key: string]: any;
+}
+
+interface EntityManagerProps<T extends EntityWithId> {
+    entityName: string;
+    data: T[];
+    columns: ColumnDefinition<T>[];
+    formFields: FormFieldDefinition[];
+    onAdd?: (formData: Omit<T, 'id'>) => void;
+    onEdit?: (id: string | number, formData: Omit<T, 'id'>) => void;
+    onDelete?: (id: string | number) => void;
+}
+
+function EntityManager<T extends EntityWithId>(
+    {
+        entityName,
+        data,
+        columns,
+        formFields,
+        onAdd,
+        onEdit,
+        onDelete
+    }: EntityManagerProps<T>): React.ReactElement {
+    const {t} = useTranslation();
+    const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+    const [editingId, setEditingId] = useState<string | number | null>(null);
+    const [formData, setFormData] = useState<Record<string, any>>({});
+    const [filterText, setFilterText] = useState<string>('');
+
+    const initForm = (item: T | null = null): void => {
         if (item) {
-            setFormData({ ...item });
+            // Copy the item for editing
+            setFormData({...item});
             setEditingId(item.id);
         } else {
-            const emptyForm = {};
+            // Create empty form data
+            const emptyForm: Record<string, any> = {};
             formFields.forEach(field => {
                 emptyForm[field.name] = '';
             });
@@ -32,33 +69,34 @@ const EntityManager = ({
         setIsFormOpen(true);
     };
 
-    const closeForm = () => {
+    const closeForm = (): void => {
         setIsFormOpen(false);
         setEditingId(null);
     };
 
-    const handleInputChange = (name, value) => {
+    const handleInputChange = (name: string, value: any): void => {
         setFormData({
             ...formData,
             [name]: value
         });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (): void => {
         if (editingId) {
             onEdit && onEdit(editingId, formData);
         } else {
-            onAdd && onAdd(formData);
+            onAdd && onAdd(formData as Omit<T, 'id'>);
         }
         closeForm();
     };
 
-    const confirmDelete = (id) => {
+    const confirmDelete = (id: string | number): void => {
         if (window.confirm(t(`${entityName.toLowerCase()}.deleteConfirm`))) {
             onDelete && onDelete(id);
         }
     };
 
+    // Filter data based on search text
     const filteredData = data.filter(item => {
         return Object.values(item).some(
             value => value && value.toString().toLowerCase().includes(filterText.toLowerCase())
@@ -76,7 +114,7 @@ const EntityManager = ({
                         onClick={() => initForm()}
                         className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 flex items-center"
                     >
-                        <PlusIcon size={16} className="mr-2" />
+                        <PlusIcon size={16} className="mr-2"/>
                         {t(`${entityName.toLowerCase()}.createNew`)}
                     </button>
                 </div>
@@ -97,10 +135,10 @@ const EntityManager = ({
                         <tr>
                             {columns.map((column) => (
                                 <th
-                                    key={column.key}
+                                    key={column.key.toString()}
                                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                 >
-                                    {t(`${entityName.toLowerCase()}.${column.key.toLowerCase()}`)}
+                                    {t(`${entityName.toLowerCase()}.${column.key.toString().toLowerCase()}`)}
                                 </th>
                             ))}
                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -111,10 +149,10 @@ const EntityManager = ({
                         <tbody className="bg-white divide-y divide-gray-200">
                         {filteredData.length > 0 ? (
                             filteredData.map((item) => (
-                                <tr key={item.id}>
+                                <tr key={item.id.toString()}>
                                     {columns.map((column) => (
-                                        <td key={column.key} className="px-6 py-4 whitespace-nowrap">
-                                            {column.render ? column.render(item) : item[column.key]}
+                                        <td key={column.key.toString()} className="px-6 py-4 whitespace-nowrap">
+                                            {column.render ? column.render(item) : item[column.key as keyof T]}
                                         </td>
                                     ))}
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -122,13 +160,13 @@ const EntityManager = ({
                                             onClick={() => initForm(item)}
                                             className="text-indigo-600 hover:text-indigo-900 mr-3"
                                         >
-                                            <PencilIcon size={16} />
+                                            <PencilIcon size={16}/>
                                         </button>
                                         <button
                                             onClick={() => confirmDelete(item.id)}
                                             className="text-red-600 hover:text-red-900"
                                         >
-                                            <TrashIcon size={16} />
+                                            <TrashIcon size={16}/>
                                         </button>
                                     </td>
                                 </tr>
@@ -156,7 +194,7 @@ const EntityManager = ({
                                 {editingId ? t(`${entityName.toLowerCase()}.edit`) : t(`${entityName.toLowerCase()}.createNew`)}
                             </h2>
                             <button onClick={closeForm} className="text-gray-500 hover:text-gray-700">
-                                <XIcon size={20} />
+                                <XIcon size={20}/>
                             </button>
                         </div>
 
@@ -173,8 +211,8 @@ const EntityManager = ({
                                             className="w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                                         >
                                             <option value="">-- {t('common.select')} --</option>
-                                            {field.options.map((option) => (
-                                                <option key={option.value} value={option.value}>
+                                            {field.options?.map((option) => (
+                                                <option key={option.value.toString()} value={option.value}>
                                                     {option.label}
                                                 </option>
                                             ))}
@@ -210,6 +248,6 @@ const EntityManager = ({
             )}
         </div>
     );
-};
+}
 
 export default EntityManager;

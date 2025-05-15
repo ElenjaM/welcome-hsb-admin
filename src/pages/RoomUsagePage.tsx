@@ -1,12 +1,49 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import EntityManager from '../components/common/EntityManager';
-import { roomData, universityMemberData } from '../data/mockData';
+import EntityManager from '@/components/common/EntityManager';
+import { roomData, universityMemberData } from '@data/mockData.ts';
 
-const RoomUsagePage = ({ data }) => {
+// Typdefinitionen
+interface Room {
+    id: string | number;
+    name: string;
+}
+
+interface UniversityMember {
+    id: string | number;
+    name: string;
+}
+
+interface RoomUsage {
+    id: string | number;
+    roomId: string | number;
+    memberId: string | number;
+}
+
+interface Column {
+    key: string;
+    label: string;
+    render?: (item: RoomUsage) => React.ReactNode;
+}
+
+interface FormField {
+    name: string;
+    label: string;
+    type: string;
+    options?: Array<{
+        value: string | number;
+        label: string;
+    }>;
+}
+
+interface RoomUsagePageProps {
+    data: RoomUsage[];
+}
+
+const RoomUsagePage: React.FC<RoomUsagePageProps> = ({ data }) => {
     const { t } = useTranslation();
 
-    const columns = [
+    const columns: Column[] = [
         {
             key: 'roomId',
             label: 'Room',
@@ -25,7 +62,7 @@ const RoomUsagePage = ({ data }) => {
         }
     ];
 
-    const formFields = [
+    const formFields: FormField[] = [
         {
             name: 'roomId',
             label: 'Room',
@@ -46,15 +83,15 @@ const RoomUsagePage = ({ data }) => {
         }
     ];
 
-    const handleAdd = (formData) => {
+    const handleAdd = (formData: Omit<RoomUsage, 'id'>): void => {
         console.log('Added new room usage:', formData);
     };
 
-    const handleEdit = (id, formData) => {
+    const handleEdit = (id: string | number, formData: Omit<RoomUsage, 'id'>): void => {
         console.log(`Edited room usage ${id}:`, formData);
     };
 
-    const handleDelete = (id) => {
+    const handleDelete = (id: string | number): void => {
         console.log(`Deleted room usage ${id}`);
     };
 

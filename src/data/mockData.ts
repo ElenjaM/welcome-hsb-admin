@@ -1,4 +1,49 @@
-export const departmentData = [
+// Define types for our data structures
+interface Department {
+    id: number;
+    name: string;
+    description: string;
+}
+
+interface UniversityMember {
+    id: number;
+    name: string;
+    email: string;
+    departmentId: number;
+}
+
+interface Building {
+    id: number;
+    name: string;
+    address: string;
+}
+
+interface Room {
+    id: number;
+    name: string;
+    floor: number;
+    type: string;
+    buildingId: number;
+}
+
+interface Event {
+    id: number;
+    title: string;
+    description: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    roomId: number;
+}
+
+interface RoomUsage {
+    roomId: number;
+    memberId: number;
+    id: string;
+}
+
+// Data arrays with type definitions
+export const departmentData: Department[] = [
     {
         id: 1,
         name: 'Computer Science',
@@ -26,7 +71,7 @@ export const departmentData = [
     }
 ];
 
-export const universityMemberData = [
+export const universityMemberData: UniversityMember[] = [
     {
         id: 1,
         name: 'Prof. Dr. Schmidt',
@@ -59,7 +104,7 @@ export const universityMemberData = [
     }
 ];
 
-export const buildingData = [
+export const buildingData: Building[] = [
     {
         id: 1,
         name: 'Main Building',
@@ -82,7 +127,7 @@ export const buildingData = [
     }
 ];
 
-export const roomData = [
+export const roomData: Room[] = [
     {
         id: 1,
         name: 'Lecture Hall A',
@@ -120,7 +165,7 @@ export const roomData = [
     }
 ];
 
-export const eventData = [
+export const eventData: Event[] = [
     {
         id: 1,
         title: 'Introduction to Programming',
@@ -159,7 +204,7 @@ export const eventData = [
     }
 ];
 
-export const roomUsageData = [
+export const roomUsageData: RoomUsage[] = [
     {
         roomId: 1,
         memberId: 1,

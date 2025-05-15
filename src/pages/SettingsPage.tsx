@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const SettingsPage = () => {
+// Definieren der Settings-Interface
+interface Settings {
+    language: string;
+    theme: 'light' | 'dark';
+    notifications: boolean;
+    emailNotifications: boolean;
+    twoFactorAuth: boolean;
+}
+
+const SettingsPage: React.FC = () => {
     const { t, i18n } = useTranslation();
-    const [settings, setSettings] = useState({
+    const [settings, setSettings] = useState<Settings>({
         language: i18n.language,
         theme: 'light',
         notifications: true,
@@ -11,18 +20,18 @@ const SettingsPage = () => {
         twoFactorAuth: false
     });
 
-    const handleChange = (key, value) => {
+    const handleChange = <T extends keyof Settings>(key: T, value: Settings[T]): void => {
         setSettings({
             ...settings,
             [key]: value
         });
 
-        if (key === 'language') {
+        if (key === 'language' && typeof value === 'string') {
             i18n.changeLanguage(value);
         }
     };
 
-    const handleSave = () => {
+    const handleSave = (): void => {
         console.log('Settings saved:', settings);
         alert(t('settings.savedSuccess'));
     };
