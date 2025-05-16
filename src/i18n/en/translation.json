@@ -10,7 +10,8 @@
     "actions": "Actions",
     "confirm": "Confirm",
     "dashboard": "Dashboard",
-    "welcome": "Welcome back"
+    "welcome": "Welcome back",
+    "select": "Select"
   },
   "sidebar": {
     "dashboard": "Dashboard",
@@ -40,7 +41,9 @@
     },
     "recentEvents": "Recent Events",
     "popularRooms": "Popular Rooms",
-    "userActivity": "User Activity"
+    "userActivity": "User Activity",
+    "events": "Events",
+    "rooms": "Rooms"
   },
   "department": {
     "title": "Manage Departments",
@@ -52,12 +55,13 @@
     "delete": "Delete Department",
     "deleteConfirm": "Are you sure you want to delete this department?"
   },
-  "universityMember": {
+  "universitymember": {
     "title": "Manage University Members",
     "id": "ID",
     "name": "Name",
     "email": "Email",
     "department": "Department",
+    "departmentid": "Department ID",
     "createNew": "Create New Member",
     "edit": "Edit Member",
     "delete": "Delete Member",
@@ -66,16 +70,16 @@
   "event": {
     "title": "Manage Events",
     "id": "ID",
-    "title": "Title",
     "description": "Description",
     "date": "Date",
-    "startTime": "Start Time",
-    "endTime": "End Time",
+    "starttime": "Start Time",
+    "endtime": "End Time",
     "room": "Room",
-    "createNew": "Create New Event",
+    "createnew": "Create New Event",
     "edit": "Edit Event",
     "delete": "Delete Event",
-    "deleteConfirm": "Are you sure you want to delete this event?"
+    "deleteconfirm": "Are you sure you want to delete this event?",
+    "roomid": "Room ID"
   },
   "room": {
     "title": "Manage Rooms",
@@ -84,6 +88,7 @@
     "floor": "Floor",
     "type": "Type",
     "building": "Building",
+    "buildingid": "Building ID",
     "createNew": "Create New Room",
     "edit": "Edit Room",
     "delete": "Delete Room",
@@ -99,10 +104,12 @@
     "delete": "Delete Building",
     "deleteConfirm": "Are you sure you want to delete this building?"
   },
-  "roomUsage": {
+  "roomusage": {
     "title": "Manage Room Usage",
     "room": "Room",
+    "roomid": "Room ID",
     "member": "Member",
+    "memberid": "Member ID",
     "createNew": "Create New Room Usage",
     "edit": "Edit Room Usage",
     "delete": "Delete Room Usage",

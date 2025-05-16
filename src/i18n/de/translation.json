@@ -10,7 +10,8 @@
     "actions": "Aktionen",
     "confirm": "Bestätigen",
     "dashboard": "Dashboard",
-    "welcome": "Willkommen zurück"
+    "welcome": "Willkommen zurück",
+    "select": "Auswählen"
   },
   "sidebar": {
     "dashboard": "Dashboard",
@@ -40,7 +41,9 @@
     },
     "recentEvents": "Neueste Veranstaltungen",
     "popularRooms": "Beliebte Räume",
-    "userActivity": "Benutzeraktivität"
+    "userActivity": "Benutzeraktivität",
+    "events": "Veranstaltungen",
+    "rooms": "Räume"
   },
   "department": {
     "title": "Fachbereiche verwalten",
@@ -52,12 +55,13 @@
     "delete": "Fachbereich löschen",
     "deleteConfirm": "Sind Sie sicher, dass Sie diesen Fachbereich löschen möchten?"
   },
-  "universityMember": {
+  "universitymember": {
     "title": "Hochschulangehörige verwalten",
     "id": "ID",
     "name": "Name",
     "email": "E-Mail",
     "department": "Fachbereich",
+    "departmentid": "Fachbereich ID",
     "createNew": "Neuen Hochschulangehörigen erstellen",
     "edit": "Hochschulangehörigen bearbeiten",
     "delete": "Hochschulangehörigen löschen",
@@ -66,16 +70,16 @@
   "event": {
     "title": "Veranstaltungen verwalten",
     "id": "ID",
-    "title": "Titel",
     "description": "Beschreibung",
     "date": "Datum",
-    "startTime": "Startzeit",
-    "endTime": "Endzeit",
+    "starttime": "Startzeit",
+    "endtime": "Endzeit",
     "room": "Raum",
-    "createNew": "Neue Veranstaltung erstellen",
+    "createnew": "Neue Veranstaltung erstellen",
     "edit": "Veranstaltung bearbeiten",
     "delete": "Veranstaltung löschen",
-    "deleteConfirm": "Sind Sie sicher, dass Sie diese Veranstaltung löschen möchten?"
+    "deleteconfirm": "Sind Sie sicher, dass Sie diese Veranstaltung löschen möchten?",
+    "roomid": "Raum ID"
   },
   "room": {
     "title": "Räume verwalten",
@@ -84,6 +88,7 @@
     "floor": "Etage",
     "type": "Typ",
     "building": "Gebäude",
+    "buildingid": "Gebäude ID",
     "createNew": "Neuen Raum erstellen",
     "edit": "Raum bearbeiten",
     "delete": "Raum löschen",
@@ -99,10 +104,12 @@
     "delete": "Gebäude löschen",
     "deleteConfirm": "Sind Sie sicher, dass Sie dieses Gebäude löschen möchten?"
   },
-  "roomUsage": {
+  "roomusage": {
     "title": "Raumnutzung verwalten",
     "room": "Raum",
+    "roomid": "Raum ID",
     "member": "Hochschulangehöriger",
+    "memberid": "Hochschulangehöriger ID",
     "createNew": "Neue Raumnutzung erstellen",
     "edit": "Raumnutzung bearbeiten",
     "delete": "Raumnutzung löschen",
